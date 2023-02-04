@@ -1,8 +1,10 @@
 {
   "name": "polyfillist",
+  "description": "Get list of required polyfill.io features based on browserslist.",
   "packageManager": "yarn@3.4.1",
   "version": "0.1.0",
   "type": "module",
+  "bin": "./dist/cli.mjs",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -12,22 +14,22 @@
     "url": "https://adenov.id"
   },
   "scripts": {
-    "start": "jiti src/index.ts",
     "build": "unbuild",
     "prepack": "yarn build"
   },
   "license": "MIT",
   "dependencies": {
     "browserslist": "^4.21.4",
+    "meow": "^11.0.0",
     "polyfill-library": "^4.6.0",
-    "semver": "^7.3.8"
+    "semver": "^7.3.8",
+    "ufo": "^1.0.1"
   },
   "devDependencies": {
     "@privyid/browserslist-config": "^0.7.0",
     "@tsconfig/node16": "^1.0.3",
     "@types/polyfill-library": "^3.108.1",
     "@types/semver": "^7.3.13",
-    "jiti": "^1.16.2",
     "unbuild": "^1.1.1"
   }
 }

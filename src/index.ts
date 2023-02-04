@@ -46,13 +46,8 @@ function getVersionRange (range: string) {
   return result
 }
 
-export interface PolyfillistConfig {
-  target?: string | string[],
-  exclude?: string[],
-}
-
-export async function polyfillist (options: PolyfillistConfig = {}) {
-  const browsers  = browserslist(options.target, { mobileToDesktop: true })
+async function polyfillist (...args: Parameters<typeof browserslist>) {
+  const browsers  = browserslist.apply(undefined, args)
   const result    = new Set<string>()
   const polyfills = await polyfill.listAllPolyfills()
 
@@ -79,6 +74,7 @@ export async function polyfillist (options: PolyfillistConfig = {}) {
             ? feature.aliases.slice().sort((a, b) => a.length - b.length)
             : []
 
+          // Check if feature already in other bundle
           const alias = aliases.find((alias) => result.has(alias))
             ?? aliases.at(0)
 
@@ -94,3 +90,5 @@ export async function polyfillist (options: PolyfillistConfig = {}) {
 
   return [...result].sort()
 }
+
+export default polyfillist
