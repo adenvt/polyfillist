@@ -2,10 +2,12 @@ import browserslist from 'browserslist'
 import polyfill from 'polyfill-library'
 import { satisfies, coerce } from 'semver'
 
+/**
+ * Check version is match
+ * @param browserVersion browser version from browserlist
+ * @param featureVersion browser version from feature polyfill.io
+ */
 function isMatchVersion (browserVersion: string, featureVersion: string): boolean {
-  if (browserVersion === featureVersion)
-    return true
-
   if (featureVersion === '*')
     return true
 
@@ -15,7 +17,12 @@ function isMatchVersion (browserVersion: string, featureVersion: string): boolea
   return satisfies(browserVersion, featureVersion, { loose: true })
 }
 
-function getBrowser (browser: string) {
+/**
+ * Map browser from browserlist to polyfill.io
+ * @param browser - browser name
+ * @returns
+ */
+function getBrowser (browser: string): string {
   if (browser === 'samsung')
     return 'samsung_mob'
 
@@ -28,7 +35,13 @@ function getBrowser (browser: string) {
   return browser
 }
 
-function getVersionRange (range: string) {
+/**
+ * Return array of version range
+ * @param range version range
+ * @example
+ * getVersionRange('14.5-14.7') // ['14.5', '14.6', '14.7']
+ */
+function getVersionRange (range: string): string[] {
   if (!range.includes('-'))
     return [range]
 
@@ -46,7 +59,12 @@ function getVersionRange (range: string) {
   return result
 }
 
-async function polyfillist (...args: Parameters<typeof browserslist>) {
+/**
+ * Return array of features by selection queries
+ * @param queries Browser queries
+ * @param opts Options
+ */
+async function polyfillist (...args: Parameters<typeof browserslist>): Promise<string[]> {
   const browsers  = browserslist.apply(undefined, args)
   const result    = new Set<string>()
   const polyfills = await polyfill.listAllPolyfills()
@@ -58,31 +76,30 @@ async function polyfillist (...args: Parameters<typeof browserslist>) {
 
     const feature = await polyfill.describePolyfill(featureName)
 
-    if (!feature)
-      continue
+    if (feature) {
+      for (const browser of browsers) {
+        const [browserName, browserVersion] = browser.split(' ')
+        const name                          = getBrowser(browserName)
 
-    for (const browser of browsers) {
-      const [browserName, browserVersion] = browser.split(' ')
-      const name                          = getBrowser(browserName)
+        if (!feature.browsers?.[name])
+          continue
 
-      if (!feature.browsers?.[name])
-        continue
+        for (const version of getVersionRange(browserVersion)) {
+          if (isMatchVersion(version, feature.browsers[name])) {
+            const aliases = Array.isArray(feature.aliases)
+              ? feature.aliases.slice().sort((a, b) => a.length - b.length)
+              : []
 
-      for (const version of getVersionRange(browserVersion)) {
-        if (isMatchVersion(version, feature.browsers[name])) {
-          const aliases = Array.isArray(feature.aliases)
-            ? feature.aliases.slice().sort((a, b) => a.length - b.length)
-            : []
+            // Check if feature already in other bundle
+            const alias = aliases.find((alias) => result.has(alias))
+              ?? aliases.at(0)
 
-          // Check if feature already in other bundle
-          const alias = aliases.find((alias) => result.has(alias))
-            ?? aliases.at(0)
-
-          // Use alias if it's shorter
-          if (alias && alias.length < featureName.length)
-            result.add(alias)
-          else
-            result.add(featureName)
+            // Use alias if it's shorter
+            if (alias && alias.length < featureName.length)
+              result.add(alias)
+            else
+              result.add(featureName)
+          }
         }
       }
     }

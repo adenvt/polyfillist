@@ -13,9 +13,13 @@
     "email": "adenvt@gmail.com",
     "url": "https://adenov.id"
   },
+  "files": [
+    "dist/"
+  ],
   "scripts": {
     "build": "unbuild",
-    "prepack": "yarn build"
+    "prepack": "yarn build",
+    "test": "vitest"
   },
   "license": "MIT",
   "dependencies": {
@@ -28,8 +32,11 @@
   "devDependencies": {
     "@privyid/browserslist-config": "^0.7.0",
     "@tsconfig/node16": "^1.0.3",
+    "@types/jest": "^29.4.0",
     "@types/polyfill-library": "^3.108.1",
     "@types/semver": "^7.3.13",
-    "unbuild": "^1.1.1"
+    "@vitest/coverage-c8": "^0.28.4",
+    "unbuild": "^1.1.1",
+    "vitest": "^0.28.4"
   }
 }
