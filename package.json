@@ -19,7 +19,8 @@
   "scripts": {
     "build": "unbuild",
     "prepack": "yarn build",
-    "test": "vitest"
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
   },
   "license": "MIT",
   "dependencies": {

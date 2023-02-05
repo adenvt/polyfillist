@@ -2,6 +2,9 @@
 
 > Get list of required polyfill.io features based on browserslist
 
+[![CI](https://github.com/adenvt/polyfillist/actions/workflows/ci.yml/badge.svg)](https://github.com/adenvt/polyfillist/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/adenvt/polyfillist/branch/main/graph/badge.svg?token=mlZkwtROwa)](https://codecov.io/gh/adenvt/polyfillist)
+
 ## Usage
 
 ### CLI Usage
