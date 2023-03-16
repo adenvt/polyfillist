@@ -1,7 +1,7 @@
 {
   "name": "polyfillist",
   "description": "Get list of required polyfill.io features based on browserslist.",
-  "packageManager": "yarn@3.4.1",
+  "packageManager": "yarn@3.5.0",
   "version": "0.1.0",
   "type": "module",
   "bin": "./dist/cli.mjs",
