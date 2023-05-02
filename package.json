@@ -25,7 +25,7 @@
   "license": "MIT",
   "dependencies": {
     "browserslist": "^4.21.4",
-    "meow": "^11.0.0",
+    "meow": "^12.0.0",
     "polyfill-library": "^4.6.0",
     "semver": "^7.3.8",
     "ufo": "^1.0.1"
