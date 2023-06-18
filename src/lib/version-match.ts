@@ -1,4 +1,4 @@
-import { satisfies } from "semver";
+import { coerce, satisfies } from "semver";
 
 /**
  * Checks whether the browser version matches the feature version
@@ -12,5 +12,7 @@ export default function isVersionMatch(browserVersion: string, featureVersion: s
     if (browserVersion === 'all')
         return true
 
-    return satisfies(browserVersion, featureVersion, {loose: true})
+    const parsedBrowserVersion = coerce(browserVersion, { loose: true })
+    if (!parsedBrowserVersion) return false
+    return satisfies(parsedBrowserVersion, featureVersion, {loose: true})
 }
