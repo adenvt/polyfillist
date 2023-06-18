@@ -2,7 +2,7 @@ import browserslist from 'browserslist'
 import polyfill from 'polyfill-library'
 import getBrowser from "./lib/get-browser";
 import getVersionRange from "./lib/get-version-range";
-import isMatchVersion from "./lib/match-version";
+import isVersionMatch from "./lib/version-match";
 
 /**
  * Return array of features by selection queries
@@ -30,7 +30,7 @@ async function polyfillist (...args: Parameters<typeof browserslist>): Promise<s
           continue
 
         for (const version of getVersionRange(browserVersion)) {
-          if (isMatchVersion(version, feature.browsers[name])) {
+          if (isVersionMatch(version, feature.browsers[name])) {
             const aliases = Array.isArray(feature.aliases)
               ? feature.aliases.slice().sort((a, b) => a.length - b.length)
               : []

@@ -1,11 +1,11 @@
 import { satisfies } from "semver";
 
 /**
- * Check version is match
+ * Checks whether the browser version matches the feature version
  * @param browserVersion browser version from browserlist
  * @param featureVersion browser version from feature polyfill.io
  */
-export default function isMatchVersion(browserVersion: string, featureVersion: string): boolean {
+export default function isVersionMatch(browserVersion: string, featureVersion: string): boolean {
     if (featureVersion === '*')
         return true
 

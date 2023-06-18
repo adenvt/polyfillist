@@ -1,4 +1,4 @@
-import matchVersion from "./match-version";
+import isVersionMatch from "./version-match";
 
 interface ITestCase {
     browserVersion: string,
@@ -6,7 +6,7 @@ interface ITestCase {
     matches: boolean
 }
 
-describe('matchVersion', () => {
+describe('isVersionMatch', () => {
     const cases: ITestCase[] = [
         { browserVersion: '14.1', featureVersion: '<15.0', matches: true },
         { browserVersion: '14.1', featureVersion: '>14.1', matches: false },
@@ -16,7 +16,7 @@ describe('matchVersion', () => {
     test.concurrent.each(cases)(
         'should match $browserVersion with $featureVersion as $matches',
         ({ browserVersion, featureVersion, matches }) => {
-            expect(matchVersion(browserVersion, featureVersion)).toBe(matches)
+            expect(isVersionMatch(browserVersion, featureVersion)).toBe(matches)
         }
     )
 })
