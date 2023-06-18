@@ -1,63 +1,8 @@
 import browserslist from 'browserslist'
 import polyfill from 'polyfill-library'
-import { satisfies, coerce } from 'semver'
-
-/**
- * Check version is match
- * @param browserVersion browser version from browserlist
- * @param featureVersion browser version from feature polyfill.io
- */
-function isMatchVersion (browserVersion: string, featureVersion: string): boolean {
-  if (featureVersion === '*')
-    return true
-
-  if (browserVersion === 'all')
-    return true
-
-  return satisfies(browserVersion, featureVersion, { loose: true })
-}
-
-/**
- * Map browser from browserlist to polyfill.io
- * @param browser - browser name
- * @returns
- */
-function getBrowser (browser: string): string {
-  if (browser === 'samsung')
-    return 'samsung_mob'
-
-  if (browser === 'and_chr')
-    return 'chrome'
-
-  if (browser === 'and_ff')
-    return 'firefox'
-
-  return browser
-}
-
-/**
- * Return array of version range
- * @param range version range
- * @example
- * getVersionRange('14.5-14.7') // ['14.5', '14.6', '14.7']
- */
-function getVersionRange (range: string): string[] {
-  if (!range.includes('-'))
-    return [range]
-
-  const [start, end]     = range.split('-')
-  const result: string[] = []
-
-  let pointer = coerce(start, { loose: true })
-
-  while (pointer && satisfies(pointer, `<=${end}`, { loose: true })) {
-    result.push(pointer.version)
-
-    pointer = pointer.inc('minor')
-  }
-
-  return result
-}
+import getBrowser from "./lib/get-browser";
+import getVersionRange from "./lib/get-version-range";
+import isMatchVersion from "./lib/match-version";
 
 /**
  * Return array of features by selection queries
@@ -79,7 +24,7 @@ async function polyfillist (...args: Parameters<typeof browserslist>): Promise<s
     if (feature) {
       for (const browser of browsers) {
         const [browserName, browserVersion] = browser.split(' ')
-        const name                          = getBrowser(browserName)
+        const name = getBrowser(browserName)
 
         if (!feature.browsers?.[name])
           continue
