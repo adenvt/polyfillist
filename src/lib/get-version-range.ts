@@ -4,11 +4,16 @@ import { coerce, satisfies } from "semver";
  * Return array of version range
  * @param range version range
  * @example
- * getVersionRange('14.5-14.7') // ['14.5', '14.6', '14.7']
+ * getVersionRange('14.5-14.7') // ['14.5.0', '14.6.0', '14.7.0']
  */
 export default function getVersionRange(range: string): string[] {
-    if (!range.includes('-'))
-        return [range]
+    if (!range.includes('-')) {
+        const version = coerce(range, {loose: true})
+
+        return version
+            ? [version.version]
+            : []
+    }
 
     const [start, end] = range.split('-')
     const result: string[] = []

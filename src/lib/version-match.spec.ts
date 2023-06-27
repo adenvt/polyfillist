@@ -3,7 +3,7 @@ import isVersionMatch from "./version-match";
 interface ITestCase {
     browserVersion: string,
     featureVersion: string,
-    matches: boolean
+    matches: boolean,
 }
 
 describe('isVersionMatch', () => {
