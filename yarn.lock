@@ -766,10 +766,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@privyid/browserslist-config@npm:^0.9.0":
-  version: 0.9.0
-  resolution: "@privyid/browserslist-config@npm:0.9.0"
-  checksum: b0851bedae585ded2d0b28c546179059000979046f387fff919e404fa9c1d335f49fbc3b8517302e426376e16efdac579327b64bb4cee121869746585ba068f7
+"@privyid/browserslist-config@npm:^0.16.0":
+  version: 0.16.0
+  resolution: "@privyid/browserslist-config@npm:0.16.0"
+  checksum: 082224b658b9a8a8d67326099260adadbb12c1cbb6be1685929974a3b068f5e2b7e7ceda0a085494e60e7cf0ec0399fc86f9f6bc3a798e080b66934a9301251d
   languageName: node
   linkType: hard
 
@@ -987,9 +987,9 @@ __metadata:
   linkType: hard
 
 "@types/semver@npm:^7.3.13":
-  version: 7.3.13
-  resolution: "@types/semver@npm:7.3.13"
-  checksum: 00c0724d54757c2f4bc60b5032fe91cda6410e48689633d5f35ece8a0a66445e3e57fa1d6e07eb780f792e82ac542948ec4d0b76eb3484297b79bd18b8cf1cb0
+  version: 7.5.0
+  resolution: "@types/semver@npm:7.5.0"
+  checksum: 0a64b9b9c7424d9a467658b18dd70d1d781c2d6f033096a6e05762d20ebbad23c1b69b0083b0484722aabf35640b78ccc3de26368bcae1129c87e9df028a22e2
   languageName: node
   linkType: hard
 
@@ -3193,8 +3193,8 @@ __metadata:
   linkType: hard
 
 "polyfill-library@npm:^4.6.0":
-  version: 4.7.0
-  resolution: "polyfill-library@npm:4.7.0"
+  version: 4.8.0
+  resolution: "polyfill-library@npm:4.8.0"
   dependencies:
     "@financial-times/polyfill-useragent-normaliser": ^2.0.1
     from2-string: ^1.1.0
@@ -3204,7 +3204,7 @@ __metadata:
     stream-from-promise: ^1.0.0
     stream-to-string: ^1.1.0
     toposort: ^2.0.2
-  checksum: 53164543feefd95e19a672180c705d21d3afffa628b7de92da2cdbae3edc3ad8e64696296dc75f218d3d3e0437a197b910a0b13dc90ecf77df1b2994b1861fdc
+  checksum: 98c19e6313bf57fd843c46c88ece190d3f3b73d11e0887f9a413f477404a5add3e032202d3ef889d54f5f315382f7a59c50e9aee4fd516c0be80f0f73ac75a8d
   languageName: node
   linkType: hard
 
@@ -3212,7 +3212,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "polyfillist@workspace:."
   dependencies:
-    "@privyid/browserslist-config": ^0.9.0
+    "@privyid/browserslist-config": ^0.16.0
     "@tsconfig/node16": ^1.0.3
     "@types/jest": ^29.4.0
     "@types/polyfill-library": ^3.108.1
@@ -3537,13 +3537,13 @@ __metadata:
   linkType: hard
 
 "semver@npm:^7.1.1, semver@npm:^7.3.2, semver@npm:^7.3.4, semver@npm:^7.3.5, semver@npm:^7.3.8":
-  version: 7.5.0
-  resolution: "semver@npm:7.5.0"
+  version: 7.5.3
+  resolution: "semver@npm:7.5.3"
   dependencies:
     lru-cache: ^6.0.0
   bin:
     semver: bin/semver.js
-  checksum: 2d266937756689a76f124ffb4c1ea3e1bbb2b263219f90ada8a11aebebe1280b13bb76cca2ca96bdee3dbc554cbc0b24752eb895b2a51577aa644427e9229f2b
+  checksum: 9d58db16525e9f749ad0a696a1f27deabaa51f66e91d2fa2b0db3de3e9644e8677de3b7d7a03f4c15bc81521e0c3916d7369e0572dbde250d9bedf5194e2a8a7
   languageName: node
   linkType: hard
 

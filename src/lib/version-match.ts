@@ -13,6 +13,9 @@ export default function isVersionMatch(browserVersion: string, featureVersion: s
         return true
 
     const parsedBrowserVersion = coerce(browserVersion, { loose: true })
-    if (!parsedBrowserVersion) return false
+
+    if (!parsedBrowserVersion)
+        return false
+
     return satisfies(parsedBrowserVersion, featureVersion, {loose: true})
 }
