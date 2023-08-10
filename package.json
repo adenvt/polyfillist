@@ -1,6 +1,10 @@
 {
   "name": "polyfillist",
   "description": "Get list of required polyfill.io features based on browserslist.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adenvt/polyfillist.git"
+  },
   "packageManager": "yarn@3.6.1",
   "version": "0.1.1",
   "type": "module",
