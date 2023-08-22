@@ -41,7 +41,7 @@
     "@types/polyfill-library": "^3.108.1",
     "@types/semver": "^7.3.13",
     "@vitest/coverage-c8": "^0.30.0",
-    "unbuild": "^1.1.1",
+    "unbuild": "^2.0.0",
     "vitest": "^0.30.0"
   }
 }
