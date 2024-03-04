@@ -5,7 +5,7 @@
     "type": "git",
     "url": "git+https://github.com/adenvt/polyfillist.git"
   },
-  "packageManager": "yarn@3.6.1",
+  "packageManager": "yarn@3.8.1",
   "version": "0.1.1",
   "type": "module",
   "bin": "./dist/cli.mjs",
