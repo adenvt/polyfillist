@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "@privyid/browserslist-config": "^0.16.0",
-    "@tsconfig/node16": "^1.0.3",
+    "@tsconfig/node16": "^16.0.0",
     "@types/jest": "^29.4.0",
     "@types/polyfill-library": "^3.108.1",
     "@types/semver": "^7.3.13",
