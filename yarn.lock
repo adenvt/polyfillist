@@ -766,10 +766,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@privyid/browserslist-config@npm:^0.16.0":
-  version: 0.16.0
-  resolution: "@privyid/browserslist-config@npm:0.16.0"
-  checksum: 082224b658b9a8a8d67326099260adadbb12c1cbb6be1685929974a3b068f5e2b7e7ceda0a085494e60e7cf0ec0399fc86f9f6bc3a798e080b66934a9301251d
+"@privyid/browserslist-config@npm:^0.27.0":
+  version: 0.27.0
+  resolution: "@privyid/browserslist-config@npm:0.27.0"
+  checksum: ddd0a7152e622d75f102c593c5dca856cc3f8b834d8fdc2fb0866638f0708fe6dff5ed3f841431a56668f006a9c1d2ceeb61062787dbcdd475428dc76148b550
   languageName: node
   linkType: hard
 
@@ -3200,7 +3200,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "polyfillist@workspace:."
   dependencies:
-    "@privyid/browserslist-config": ^0.16.0
+    "@privyid/browserslist-config": ^0.27.0
     "@tsconfig/node16": ^16.0.0
     "@types/jest": ^29.4.0
     "@types/polyfill-library": ^3.108.1
