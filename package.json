@@ -35,7 +35,7 @@
     "ufo": "^1.0.1"
   },
   "devDependencies": {
-    "@privyid/browserslist-config": "^0.16.0",
+    "@privyid/browserslist-config": "^0.27.0",
     "@tsconfig/node16": "^16.0.0",
     "@types/jest": "^29.4.0",
     "@types/polyfill-library": "^3.108.1",
