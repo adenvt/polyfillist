@@ -1,5 +1,5 @@
 /**
- * Map browser from browserlist to polyfill.io
+ * Map browser from browserlist to https://cdnjs.cloudflare.com/polyfill/
  * @param browser - browser name
  * @returns
  */

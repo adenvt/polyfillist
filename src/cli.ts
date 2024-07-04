@@ -6,14 +6,14 @@ import { withQuery } from 'ufo'
 import polyfillist from '.'
 
 const cli = meow(`
-Get list of required polyfill.io features based on browserslist.
+Get list of required https://cdnjs.cloudflare.com/polyfill/ features based on browserslist.
 
 Usage:
   npx polyfillist
   npx polyfillist "QUERIES"
   npx polyfillist --json "QUERIES"
   npx polyfillist --url "QUERIES"
-  npx polyfillist --url --host="https://polyfill.io/v3/polyfill.js"
+  npx polyfillist --url --host="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.js"
   npx polyfillist --config="path/to/browserlist/file"
   npx polyfillist --env="environment name defined in config"
   npx polyfillist --stats="path/to/browserlist/stats/file"
@@ -34,7 +34,7 @@ Usage:
     host: {
       type      : 'string',
       isRequired: false,
-      default   : 'https://polyfill.io/v3/polyfill.min.js',
+      default   : 'https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js',
     },
     config: {
       type      : 'string',

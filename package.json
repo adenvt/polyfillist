@@ -1,6 +1,6 @@
 {
   "name": "polyfillist",
-  "description": "Get list of required polyfill.io features based on browserslist.",
+  "description": "Get list of required https://cdnjs.cloudflare.com/polyfill/ features based on browserslist.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/adenvt/polyfillist.git"
