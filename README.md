@@ -1,6 +1,6 @@
 # polyfillist
 
-> Get list of required polyfill.io features based on browserslist
+> Get list of required https://cdnjs.cloudflare.com/polyfill/ features based on browserslist
 
 [![CI](https://github.com/adenvt/polyfillist/actions/workflows/ci.yml/badge.svg)](https://github.com/adenvt/polyfillist/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/adenvt/polyfillist/branch/main/graph/badge.svg?token=mlZkwtROwa)](https://codecov.io/gh/adenvt/polyfillist)
@@ -9,7 +9,7 @@
 
 ### CLI Usage
 
-Return list of required polyfill.io features
+Return list of required https://cdnjs.cloudflare.com/polyfill/ features
 
 ```bash
 npx polyfillist
