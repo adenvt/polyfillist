@@ -59,7 +59,7 @@
     "eslint-plugin-varspacing": "1.2.2",
     "eslint-plugin-vue": "9.23.0",
     "typescript": "5.4.5",
-    "unbuild": "^1.1.1",
+    "unbuild": "^2.0.0",
     "vitest": "^0.30.0"
   }
 }
