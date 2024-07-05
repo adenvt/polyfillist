@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 
+/* eslint-disable unicorn/prefer-top-level-await */
+
 import meow from 'meow'
 import { EOL } from 'node:os'
 import { withQuery } from 'ufo'
-import polyfillist from '.'
+import polyfillist from './index.js'
 
 const cli = meow(`
 Get list of required https://cdnjs.cloudflare.com/polyfill/ features based on browserslist.
@@ -56,10 +58,10 @@ Usage:
       type      : 'boolean',
       isRequired: false,
     },
-	}
+  },
 })
 
-;(async () => {
+void (async () => {
   try {
     const result = await polyfillist(cli.input[0], cli.flags)
 

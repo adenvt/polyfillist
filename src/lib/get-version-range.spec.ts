@@ -1,4 +1,4 @@
-import getVersionRange from "./get-version-range"
+import getVersionRange from './get-version-range.js'
 
 it('should return array of version', () => {
   const result = getVersionRange('16.0-16.5')
@@ -16,7 +16,5 @@ it('should return array of version', () => {
 it('should return version itself if version wasn\'t not a range', () => {
   const result = getVersionRange('16')
 
-  expect(result).toStrictEqual([
-    '16.0.0',
-  ])
+  expect(result).toStrictEqual(['16.0.0'])
 })

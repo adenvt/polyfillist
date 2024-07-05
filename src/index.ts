@@ -1,8 +1,8 @@
 import browserslist from 'browserslist'
 import polyfill from 'polyfill-library'
-import getBrowser from "./lib/get-browser";
-import getVersionRange from "./lib/get-version-range";
-import isVersionMatch from "./lib/version-match";
+import getBrowser from './lib/get-browser.js'
+import getVersionRange from './lib/get-version-range.js'
+import isVersionMatch from './lib/version-match.js'
 
 /**
  * Return array of features by selection queries
@@ -10,7 +10,7 @@ import isVersionMatch from "./lib/version-match";
  * @param opts Options
  */
 async function polyfillist (...args: Parameters<typeof browserslist>): Promise<string[]> {
-  const browsers  = browserslist.apply(undefined, args)
+  const browsers  = browserslist(...args)
   const result    = new Set<string>()
   const polyfills = await polyfill.listAllPolyfills()
 
@@ -24,7 +24,7 @@ async function polyfillist (...args: Parameters<typeof browserslist>): Promise<s
     if (feature) {
       for (const browser of browsers) {
         const [browserName, browserVersion] = browser.split(' ')
-        const name = getBrowser(browserName)
+        const name                          = getBrowser(browserName)
 
         if (!feature.browsers?.[name])
           continue
@@ -32,7 +32,7 @@ async function polyfillist (...args: Parameters<typeof browserslist>): Promise<s
         for (const version of getVersionRange(browserVersion)) {
           if (isVersionMatch(version, feature.browsers[name])) {
             const aliases = Array.isArray(feature.aliases)
-              ? feature.aliases.slice().sort((a, b) => a.length - b.length)
+              ? [...feature.aliases].sort((a, b) => a.length - b.length)
               : []
 
             // Check if feature already in other bundle

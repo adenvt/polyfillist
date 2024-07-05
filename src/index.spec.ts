@@ -1,4 +1,4 @@
-import polyfillist from '.'
+import polyfillist from './index.js'
 
 describe('polyfillist', () => {
   it('should able to return feature list from browserlist config', async () => {
