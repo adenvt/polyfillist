@@ -1048,25 +1048,25 @@ __metadata:
   linkType: hard
 
 "@privyid/eslint-config-persona@npm:^1.0.0-rc.6":
-  version: 1.0.0-rc.6
-  resolution: "@privyid/eslint-config-persona@npm:1.0.0-rc.6"
+  version: 1.0.0-rc.7
+  resolution: "@privyid/eslint-config-persona@npm:1.0.0-rc.7"
   peerDependencies:
     "@typescript-eslint/eslint-plugin": 5.62.0
     "@typescript-eslint/parser": 5.62.0
     "@vue/eslint-config-typescript": 13.0.0
-    eslint: 8.57.0
-    eslint-config-standard-with-typescript: 21.0.1
-    eslint-formatter-pretty: 5.0.0
+    eslint: 9.6.0
+    eslint-config-standard-with-typescript: 43.0.1
+    eslint-formatter-pretty: 6.0.1
     eslint-plugin-align-assignments: 1.1.2
     eslint-plugin-import: 2.29.1
-    eslint-plugin-n: 16.6.2
+    eslint-plugin-n: 17.9.0
     eslint-plugin-node: 11.1.0
     eslint-plugin-promise: 6.1.1
-    eslint-plugin-unicorn: 48.0.1
+    eslint-plugin-unicorn: 54.0.0
     eslint-plugin-varspacing: 1.2.2
     eslint-plugin-vue: 9.23.0
     typescript: 5.4.5
-  checksum: 10/25d91e0b8abcd4d694a9328859c2469a48d02216efb0efa7e610789c0980d83be5e9970bb41ecc8543ecf80904be6ab1250019354ba1aef28220f23f90dcadee
+  checksum: 10/2623cd3c3be2115db7a5ac1a9bf12066eee6fed55866a939a1bf12e4720f7aaab40397f1e8d68f1010203fcd1b4d1ee25f77131d6ca6ee3b6a88e3d74154a2c1
   languageName: node
   linkType: hard
 
