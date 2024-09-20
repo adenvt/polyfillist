@@ -9,13 +9,19 @@ interface ITestCase {
 describe('isVersionMatch', () => {
   const cases: ITestCase[] = [
     {
-      browserVersion: '14.1', featureVersion: '<15.0', matches: true,
+      browserVersion: '14.1',
+      featureVersion: '<15.0',
+      matches       : true,
     },
     {
-      browserVersion: '14.1', featureVersion: '>14.1', matches: false,
+      browserVersion: '14.1',
+      featureVersion: '>14.1',
+      matches       : false,
     },
     {
-      browserVersion: '1.0.1', featureVersion: '1 - 14.1', matches: true,
+      browserVersion: '1.0.1',
+      featureVersion: '1 - 14.1',
+      matches       : true,
     },
   ]
 

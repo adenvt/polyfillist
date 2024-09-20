@@ -1,5 +1,5 @@
 import browserslist from 'browserslist'
-import polyfill from 'polyfill-library'
+import polyfill from '@mrhenry/polyfill-library'
 import getBrowser from './lib/get-browser.js'
 import getVersionRange from './lib/get-version-range.js'
 import isVersionMatch from './lib/version-match.js'
