@@ -51,6 +51,9 @@ jobs:
       - name: Run Test
         run: yarn coverage
 
+      - name: Run Lint
+        run: yarn coverage
+
       - name: Upload to Codecov
         uses: codecov/codecov-action@v4
         if: matrix.node-version == 20
