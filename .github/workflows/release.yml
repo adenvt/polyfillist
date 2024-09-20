@@ -8,17 +8,12 @@ on:
     tags:
       - '*'
 
+env:
+  NODE_VERSION: 16
+
 jobs:
   release:
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      fail-fast: false
-      matrix:
-        os:
-          - ubuntu-latest
-        node-version:
-          - 16
+    runs-on: ubuntu-latest
 
     steps:
       - name: Git Checkout
@@ -39,10 +34,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: ${{ env.NODE_VERSION }}
           registry-url: 'https://registry.npmjs.org'
           cache: "yarn"
 
@@ -52,7 +47,7 @@ jobs:
       - name: Generate Changelog
         run: npx changelogithub --to $GITHUB_REF_NAME
         env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         continue-on-error: true
 
       - name: Publish Package
